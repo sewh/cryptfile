@@ -39,6 +39,7 @@ func main() {
 		fmt.Printf("Wrote encrypted file to: %s\n", encFile)
 		fmt.Printf("Wrote metadata file to:  %s\n", metaFile)
 	} else if args[0] == "decrypt" {
+	    fmt.Printf("Decrypting %s with %s\n", args[1], args[2])
 		plainFile, err := file.Decrypt(args[1], args[2])
 		if err != nil {
 			fmt.Println(err.Error())

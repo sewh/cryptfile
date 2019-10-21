@@ -179,7 +179,7 @@ func Decrypt(encPath, metaPath string) (string, error) {
 	}
 
 	// Extract out HMAC hash
-	hmacHex := strings.TrimRight(filepath.Base(encPath), ".enc")
+	hmacHex := strings.TrimSuffix(filepath.Base(encPath), ".enc")
 	hmacBytes, err := hex.DecodeString(hmacHex)
 	if err != nil {
 		return "", err
